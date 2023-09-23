@@ -7,13 +7,22 @@ export async function load() {
         }
     })
 
-    let exps = await prisma.experiences.findMany()
+    let exps = await prisma.experiences.findMany({
+        include:{
+            exp_to_tech:{
+                include:{
+                    technos: true
+                }
+            }
+        }
+    })
     let trainings = await prisma.formations.findMany()
 
     return { techs, exps, trainings }
 }
 
 export const actions = {
+    // tech actions
     editTech: async ({request})=>{
         let data = await request.formData()
         let id = data.get('id')
@@ -32,7 +41,6 @@ export const actions = {
                 iconName
             }
         })
-        console.log(response)
     },
     deleteTech: async ({request}) => {
         let data = await request.formData()
@@ -59,7 +67,78 @@ export const actions = {
                 iconName
             }
         })
-        console.log(response)
+    },
+
+    // Exp actions
+
+    addExp: async({request}) => {
+        let dataForm = await request.formData()
+        let title = dataForm.get('title')
+        let description = dataForm.get('description')
+        let tech = dataForm.getAll('technos')
+        let technos = tech.map(Number)
+        let societe = dataForm.get('societe')
+        let status = dataForm.get('status')
+
+        let response = await prisma.experiences.create({
+            data:{
+                title,
+                description,
+                societe,
+                status,
+                exp_to_tech: {
+                    create: technos.map(techId => ({
+                        technos: {
+                            connect: { id: techId }
+                        }
+                    }))
+                }
+            },
+        })
+    },
+
+    editExp: async ({ request }) => {
+        let dataForm = await request.formData();
+        let id = dataForm.get('id');
+        let title = dataForm.get('title');
+        let description = dataForm.get('description');
+        let techs = dataForm.getAll('technos').map(Number);
+        let societe = dataForm.get('societe')
+        let status = dataForm.get('status')
+
+        let response = await prisma.experiences.update({
+            where: {
+                id: id
+            },
+            data: {
+                title,
+                description,
+                societe,
+                status,
+                exp_to_tech: {
+                    deleteMany: {
+                        exp: id
+                    },
+                    create: techs.map(techId => ({
+                        technos: {
+                            connect: { id: techId }
+                        }
+                    }))
+                }
+            }
+        });
+    },
+
+    deleteExp: async({request}) =>{
+        let data = await request.formData()
+        let id = data.get('id')
+        let response = await prisma.experiences.delete({
+            where:{
+                id
+            }
+        })
     }
+
+    // trainings actions
 }
 

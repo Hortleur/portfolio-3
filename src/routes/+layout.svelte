@@ -8,17 +8,18 @@
   let nightTheme = "luxury";
   let today = new Date();
   let hour = today.getHours();
+  let month = today.getMonth() + 1;
 
   onMount(() => {
-    if (today.toString().includes("Summer")) {
-      dayTheme = "lemonade";
-    } else if (today.toString().includes("Winter")) {
-      dayTheme = "winter";
-    } else if (today.toString().includes("autumn")) {
-      dayTheme = "autumn";
-    } else {
-      dayTheme = "garden";
-    }
+      if (month >= 3 && month <= 5) {
+          dayTheme = "lemonade"; // Printemps
+      } else if (month >= 6 && month <= 8) {
+          dayTheme = "garden"; // Été
+      } else if (month >= 9 && month <= 11) {
+          dayTheme = "autumn"; // Automne
+      } else {
+          dayTheme = "winter"; // Hiver
+      }
 
     if (hour < 7 || hour > 19) {
       document.documentElement.setAttribute("data-theme", nightTheme);

@@ -12,10 +12,6 @@
         editTech = true
     }
 
-    const deleteTechFunc = (id) => {
-        console.log(id)
-    }
-
     const add = () => {
         addTech = true
     }

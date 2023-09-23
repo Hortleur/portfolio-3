@@ -1,7 +1,8 @@
 <script>
     import TechTable from "$lib/components/techTable.svelte";
+    import ExpTable from "$lib/components/expTable.svelte"
     export let data
-    let toShow = "tech"
+    let toShow = "exps"
     let tabs = [
         {
             name: 'Expériences',
@@ -35,6 +36,12 @@
         <div class="w-3/5 mx-auto my-10 rounded-lg bg-accent">
             <h2 class="text-center text-2xl">Techs</h2>
             <TechTable techs={data.techs} />
+        </div>
+    {/if}
+    {#if (toShow === "exps")}
+        <div class="w-3/5 mx-auto my-10 rounded-lg bg-accent">
+            <h2 class="text-center text-2xl">Exps</h2>
+            <ExpTable exps={data.exps} techs={data.techs} />
         </div>
     {/if}
 

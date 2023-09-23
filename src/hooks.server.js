@@ -15,14 +15,16 @@ export const handle = async ({ event, resolve }) => {
      * of calling `const { data: { session } } = await supabase.auth.getSession()`
      * you just call this `await getSession()`
      */
-    event.locals.getSession = async () => {
-        const {
-            data: { session, error },
-        } = await event.locals.supabase.auth.getSession()
-        return {session}
-    }
+
 
     if(event.url.pathname.startsWith('/admin/dashboard')){
+        event.locals.getSession = async () => {
+            const {
+                data: { session, error },
+            } = await event.locals.supabase.auth.getSession()
+            return {session}
+        }
+
         const { data: { user}} = await event.locals.supabase.auth.getUser()
 
         if(!user){

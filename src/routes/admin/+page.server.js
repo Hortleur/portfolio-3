@@ -14,7 +14,7 @@ export const actions = {
         if (error) {
             return fail(500, { message: 'Server error. Try again later.', success: false, email })
         }
-        console.log('ca passe')
+
         throw redirect(303, '/admin/dashboard')
     },
 }
