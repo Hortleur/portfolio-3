@@ -10,6 +10,6 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["lemonade", "luxury", "autumn", "winter", "garden"],
+    themes: ["lemonade", "night", "autumn", "winter", "garden"],
   },
 };

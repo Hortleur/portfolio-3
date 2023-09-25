@@ -5,7 +5,7 @@
   let techs = data.techs;
 </script>
 
-<main class=" flex flex-col items-center gap-5 my-6">
+<main class=" flex flex-row flex-wrap items-center justify-around gap-5 my-6">
   {#each techs as tech}
     <div
       class=" radial-progress grid place-items-center w-56 h-56"

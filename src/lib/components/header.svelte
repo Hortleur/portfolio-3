@@ -22,10 +22,10 @@
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a href="/">Acceuil</a></li>
-        <li><a href="/experiences">Expériences</a></li>
-        <li><a href="/formations">Formations</a></li>
-        <li><a href="/technos">Technos</a></li>
+        <li><a href="/" class="text-lg">Acceuil</a></li>
+        <li><a href="/experiences" class="text-lg">Expériences</a></li>
+        <li><a href="/formations" class="text-lg">Formations</a></li>
+        <li><a href="/technos" class="text-lg">Technos</a></li>
       </ul>
     </div>
     <a class="btn btn-ghost normal-case text-xl"
@@ -38,10 +38,10 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="/">Acceuil</a></li>
-      <li><a href="/experiences">Expériences</a></li>
-      <li><a href="/formations">Formations</a></li>
-      <li><a href="/technos">Technos</a></li>
+      <li><a href="/" class="text-lg">Acceuil</a></li>
+      <li><a href="/experiences" class="text-lg">Expériences</a></li>
+      <li><a href="/formations" class="text-lg">Formations</a></li>
+      <li><a href="/technos" class="text-lg">Technos</a></li>
     </ul>
   </div>
   <div class="navbar-end">

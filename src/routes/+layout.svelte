@@ -5,7 +5,7 @@
   import Header from "$lib/components/header.svelte";
 
   let dayTheme = "";
-  let nightTheme = "luxury";
+  let nightTheme = "night";
   let today = new Date();
   let hour = today.getHours();
   let month = today.getMonth() + 1;

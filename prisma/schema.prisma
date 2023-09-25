@@ -27,6 +27,7 @@ model formations {
   name           String?
   description    String?
   obtention_date DateTime? @db.Date
+  completion     Int?      @db.SmallInt
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.

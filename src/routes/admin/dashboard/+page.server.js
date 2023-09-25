@@ -137,8 +137,56 @@ export const actions = {
                 id
             }
         })
-    }
+    },
 
     // trainings actions
+
+    addTrain: async ({request}) => {
+        let data = await request.formData()
+        let name = data.get('name')
+        let description = data.get('description')
+        let obtention_date = new Date(data.get('obtention_date'))
+        let completion = Number(data.get('completion'))
+        let response = await prisma.formations.create({
+            data: {
+                name,
+                description,
+                obtention_date,
+                completion
+            }
+        })
+        console.log(response)
+    },
+
+    deleteTrain: async({request}) => {
+        let data = await request.formData()
+        let id = data.get('id')
+        let response = await prisma.formations.delete({
+            where:{
+                id
+            }
+        })
+    },
+
+    editTrain: async ({request}) => {
+        let data = await request.formData()
+        let id = data.get('id')
+        let name = data.get('name')
+        let description = data.get('description')
+        let obtention_date = new Date(data.get('obtention_date'))
+        let completion = Number(data.get('completion'))
+        let response = await prisma.formations.update({
+            where:{
+            id
+                },
+            data: {
+                name,
+                description,
+                obtention_date,
+                completion
+            }
+        })
+        console.log(response)
+    },
 }
 
