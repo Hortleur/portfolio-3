@@ -3,6 +3,7 @@
   import { themeChange } from "theme-change";
   import "../app.css";
   import Header from "$lib/components/header.svelte";
+  import {page} from "$app/stores";
 
   let dayTheme = "";
   let nightTheme = "night";
@@ -30,6 +31,5 @@
     themeChange(false);
   });
 </script>
-
 <Header />
 <slot />

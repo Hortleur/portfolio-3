@@ -25,7 +25,7 @@ export const actions = {
     // tech actions
     editTech: async ({request})=>{
         let data = await request.formData()
-        let id = data.get('id')
+        let id = Number(data.get('id'))
         let name = data.get('name')
         let level = Number(data.get('level'))
         let color = data.get('color')
