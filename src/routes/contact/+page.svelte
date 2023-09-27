@@ -50,7 +50,7 @@ let collective = collectiveImg
         <a href="https://sbk-acdsis.collective.work" target="_blank" class=" flex flex-row flex-nowrap items-center gap-3 border-2 rounded-xl w-11/12 lg:w-3/12 mx-auto my-10 py-5 px-3 font-semibold lg:hover:shadow-lg  ">
             <img src="{collective}" alt="Logo du collectif" class="w-28">
             <div>
-                <p>Besoin d'une Equipe pour un projet plus ambicieux ?</p>
+                <p>Besoin d'une Equipe pour un projet plus ambitieux ?</p>
                 <p>Retrouver mon collectif disponible pour vos grosses missions</p>
             </div>
         </a>
