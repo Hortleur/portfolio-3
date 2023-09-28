@@ -3,7 +3,10 @@
   import { themeChange } from "theme-change";
   import "../app.css";
   import Header from "$lib/components/header.svelte";
-  import {page} from "$app/stores";
+  import { dev } from "$app/environment";
+  import { inject} from "@vercel/analytics";
+
+  inject({ mode: dev ? 'development' : 'production' });
 
   let dayTheme = "";
   let nightTheme = "night";
