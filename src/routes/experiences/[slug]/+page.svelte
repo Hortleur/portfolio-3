@@ -17,7 +17,7 @@
         <h2 class="text-3xl">Technos utilisées</h2>
         <div class=" flex flex-row flex-wrap justify-around gap-3">
             {#each exp.exp_to_tech as tech}
-                <span class="badge bg-info py-3">{tech.technos.name}</span>
+                <span class="badge bg-info text-black font-semibold py-3">{tech.technos.name}</span>
             {/each}
         </div>
     </div>

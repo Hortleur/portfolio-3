@@ -20,7 +20,7 @@
                 <div>
                     <h3>Technos</h3>
                     {#each exp.exp_to_tech as tech}
-                        <span class="badge badge-info">{tech.technos.name}</span>
+                        <span class="badge badge-info font-semibold">{tech.technos.name}</span>
                     {/each}
                 </div>
                 <div class="card-actions">
