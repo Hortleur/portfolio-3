@@ -3,9 +3,9 @@
 
     let exps = data.exps
 </script>
-<main class="flex flex-row flex-wrap justify-around">
+<main class="flex flex-row flex-wrap justify-around gap-3">
     {#each exps as exp}
-        <div class="card card-bordered w-11/12 my-2 xl:w-1/3 xl:hover:shadow-xl shadow-md">
+        <div class="card card-bordered w-11/12 my-2 lg:w-1/3 xl:hover:shadow-xl shadow-md">
             <div class="card-body">
                 <h2 class="card-title">{exp.title}</h2>
                 <p>{exp.status} Chez {exp.societe}</p>
